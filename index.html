@@ -7,10 +7,23 @@
     </body>
     <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-    <script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
         const root = document.getElementById("root");
-        const span = React.createElement("span", {id:"sexy-span", style:{color:"red"}}, "Span Tag");
-        ReactDOM.render(span, root);
-
+        function App() {
+            const [counter, modifier] = React.useState(0);
+            
+            return (
+                <div>
+                    <h3 id="title">
+                        Total clicks : {counter}
+                    </h3>
+                    <button>
+                        Click me
+                    </button>
+                </div>
+            );
+        }
+        ReactDOM.render(<App/>, root);
     </script>
 </html>
